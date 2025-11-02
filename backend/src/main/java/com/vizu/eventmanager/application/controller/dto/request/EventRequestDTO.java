@@ -15,7 +15,7 @@ public class EventRequestDTO {
     @Size(max = 1000)
     private String description;
 
-    @FutureOrPresent
+    @FutureOrPresent(message = "Data do evento deve ser atual ou futura")
     private LocalDateTime eventDate;
 
     @Size(max = 200)
