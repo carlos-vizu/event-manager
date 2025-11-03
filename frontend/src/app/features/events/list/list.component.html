@@ -1,1 +1,25 @@
-<p>list works!</p>
+<h1>Event List</h1>
+<a [routerLink]="['/events/new']" class="create-btn">+ Create New Event</a>
+
+<div class="event-container">
+  <div class="event-card" *ngFor="let event of events">
+    <h2 class="event-title">{{ event.title }}</h2>
+    <p class="event-description">{{ event.description }}</p>
+    <p class="event-meta">
+      <strong>Date:</strong> {{ event.eventDate }} <br>
+      <strong>Location:</strong> {{ event.location }}
+    </p>
+    <div class="event-actions">
+      <a [routerLink]="['/events', event.id]">View</a> |
+      <a [routerLink]="['/events', event.id, 'edit']">Edit</a> |
+      <a (click)="deleteEvent(event.id!)" class="delete-link">Delete</a>
+    </div>
+  </div>
+</div>
+
+<mat-paginator
+  [length]="totalElements"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 20]"
+  (page)="onPageChange($event)">
+</mat-paginator>

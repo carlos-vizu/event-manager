@@ -1,0 +1,72 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #3f51b5;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.create-btn:hover {
+  background-color: #303f9f;
+}
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 16px;
+  width: 280px;
+}
+
+.event-title {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.event-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 8px 0;
+}
+
+.event-meta {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.event-actions {
+  margin-top: 12px;
+}
+
+.event-actions a {
+  text-decoration: none;
+  color: #3f51b5;
+  margin-right: 8px;
+}
+
+.event-actions a:hover {
+  text-decoration: underline;
+}
+
+.delete-link {
+  color: #f44336;
+}
+
+.delete-link:hover {
+  text-decoration: underline;
+}
