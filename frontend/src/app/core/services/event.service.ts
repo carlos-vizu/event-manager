@@ -8,7 +8,7 @@ import { Event } from '../models/event.model';
 })
 export class EventService {
 
-  private apiUrl = 'http://localhost:8080/api/events';
+  private apiUrl = '/api/events';
 
   private events: Event[] = [];
 
