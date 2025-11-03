@@ -1,11 +1,9 @@
-package com.vizu.eventmanager.controller;
+package com.vizu.eventmanager.application.controller;
 
 import com.vizu.eventmanager.application.controller.dto.request.EventRequestDTO;
 import com.vizu.eventmanager.application.controller.dto.response.EventResponseDTO;
-import com.vizu.eventmanager.domain.model.Event;
 import com.vizu.eventmanager.domain.service.EventService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

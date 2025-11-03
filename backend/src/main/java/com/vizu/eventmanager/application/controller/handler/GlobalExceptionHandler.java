@@ -1,4 +1,4 @@
-package com.vizu.eventmanager.controller.handler;
+package com.vizu.eventmanager.application.controller.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
