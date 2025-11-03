@@ -23,11 +23,6 @@ public class EventController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<EventResponseDTO>> listAll(Pageable pageable) {
-        return ResponseEntity.ok(service.listAll(pageable));
-    }
-
-    @GetMapping("/actives")
     public ResponseEntity<Page<EventResponseDTO>> listAllActives(Pageable pageable) {
         return ResponseEntity.ok(service.listAllActives(pageable));
     }

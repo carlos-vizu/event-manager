@@ -11,9 +11,6 @@ import java.util.List;
 
 public interface EventRepository extends JpaRepository<Event, Long> {
 
-    @Query("SELECT e FROM Event e WHERE e.id = :id AND e.deleted = false")
-    Event findActiveById(@Param("id") Long id);
-
     @Query("SELECT e FROM Event e WHERE e.deleted = false")
     Page<Event> findAllActives(Pageable pageable);
 
