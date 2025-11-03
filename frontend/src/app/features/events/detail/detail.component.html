@@ -1,1 +1,17 @@
-<p>detail works!</p>
+<div *ngIf="event" class="event-detail-card">
+  <h2>{{ event.title }}</h2>
+  <p class="event-meta">
+    <strong>Date e hora:</strong> {{ event.eventDate | date:'full' }}<br/>
+    <strong>Local:</strong> {{ event.location }}
+  </p>
+  <p class="event-description">{{ event.description }}</p>
+  <p class="event-timestamps" *ngIf="event.createdAt || event.updatedAt">
+    <small *ngIf="event.createdAt">Criado em: {{ event.createdAt | date:'short' }}</small><br/>
+    <small *ngIf="event.updatedAt">Atualizado em: {{ event.updatedAt | date:'short' }}</small>
+  </p>
+
+  <div class="actions">
+    <a [routerLink]="['/events', event.id, 'edit']" class="edit-btn">Editar</a>
+    <a [routerLink]="['/events']" class="back-btn">Voltar</a>
+  </div>
+</div>
