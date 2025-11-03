@@ -37,7 +37,7 @@ export class ListComponent {
   }
 
   deleteEvent(id: number) {
-    if (confirm('Are you sure you want to delete this event?')) {
+    if (confirm('Você tem certeza que deseja excluir este evento?')) {
       this.eventService.deleteEvent(id).subscribe(() => {
         this.loadEvents(this.pageIndex, this.pageSize);
       });

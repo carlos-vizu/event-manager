@@ -1,18 +1,18 @@
-<h1>Event List</h1>
-<a [routerLink]="['/events/new']" class="create-btn">+ Create New Event</a>
+<h1>Lista de Eventos</h1>
+<a [routerLink]="['/events/new']" class="create-btn">+ Criar Novo Evento</a>
 
 <div class="event-container">
   <div class="event-card" *ngFor="let event of events">
     <h2 class="event-title">{{ event.title }}</h2>
     <p class="event-description">{{ event.description }}</p>
     <p class="event-meta">
-      <strong>Date:</strong> {{ event.eventDate }} <br>
-      <strong>Location:</strong> {{ event.location }}
+      <strong>Data e hora:</strong> {{ event.eventDate | date:'dd/MM/yyyy HH:mm'}} <br>
+      <strong>Local:</strong> {{ event.location }}
     </p>
     <div class="event-actions">
-      <a [routerLink]="['/events', event.id]">View</a> |
-      <a [routerLink]="['/events', event.id, 'edit']">Edit</a> |
-      <a (click)="deleteEvent(event.id!)" class="delete-link">Delete</a>
+      <a [routerLink]="['/events', event.id]">Detalhes</a> |
+      <a [routerLink]="['/events', event.id, 'edit']">Editar</a> |
+      <a (click)="deleteEvent(event.id!)" class="delete-link">Excluir</a>
     </div>
   </div>
 </div>
