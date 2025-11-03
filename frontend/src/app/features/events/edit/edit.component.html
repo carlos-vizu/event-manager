@@ -1,1 +1,27 @@
-<p>edit works!</p>
+<div class="event-edit-container">
+  <h2>Editar Evento</h2>
+  <form #eventForm="ngForm" (ngSubmit)="save(eventForm)">
+    <label>
+      Título:
+      <input type="text" name="title" [(ngModel)]="event.title" required />
+    </label>
+
+    <label>
+      Descrição:
+      <textarea name="description" [(ngModel)]="event.description" required></textarea>
+    </label>
+
+    <label>
+      Data e Hora:
+      <input type="datetime-local" name="eventDate" [(ngModel)]="event.eventDate" required />
+    </label>
+
+    <label>
+      Local:
+      <input type="text" name="location" [(ngModel)]="event.location" required />
+    </label>
+
+    <button type="submit" [disabled]="!eventForm.form.valid">Salvar</button>
+    <a [routerLink]="['/events']" class="cancel-btn">Cancelar</a>
+  </form>
+</div>
