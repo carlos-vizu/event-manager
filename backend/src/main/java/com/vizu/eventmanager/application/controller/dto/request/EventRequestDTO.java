@@ -1,5 +1,6 @@
 package com.vizu.eventmanager.application.controller.dto.request;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -21,6 +22,7 @@ public class EventRequestDTO {
     @Size(max = 200)
     private String location;
 
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private boolean deleted;
 
     public String getTitle() {
