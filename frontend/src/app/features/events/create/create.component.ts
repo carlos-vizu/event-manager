@@ -14,6 +14,7 @@ import { Event } from '../../../core/models/event.model';
 })
 export class CreateComponent {
   event: Event = { title: '', description: '', eventDate: '', location: '' };
+  errorMessage: string | null = null;
 
   constructor(private eventService: EventService, private router: Router) {}
 
@@ -26,11 +27,18 @@ export class CreateComponent {
 
     this.eventService.createEvent(this.event).subscribe({
       next: () => {
+        this.errorMessage = null;
         if (confirm('Evento salvo com sucesso! Clique OK para voltar à lista de eventos.')) {
           this.router.navigate(['/events']);
         }
       },
-      error: (err) => console.error('Erro ao criar evento', err),
+      error: (err) => {
+        if (err.status === 400 && err.error) {
+          this.errorMessage = Object.values(err.error).join(', ');
+        } else {
+          this.errorMessage = 'Erro inesperado ao criar evento.';
+        }
+      },
     });
   }
 }

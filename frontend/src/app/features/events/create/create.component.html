@@ -1,5 +1,11 @@
 <div class="event-create-container">
   <h2>Criar Evento</h2>
+
+  <!-- mensagem de erro -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
   <form #eventForm="ngForm" (ngSubmit)="save(eventForm)">
     <label>
       Título:
